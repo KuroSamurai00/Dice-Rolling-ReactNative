@@ -2,54 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView,  } from 'react-native';
 
+import { NavigationContainer } from '@react-navigation/native';
+import {HomeScreenStack} from './Nav/mainNav';
 
 
 const App = props => {
 
-const [diceSelect, setDiceSelect] = useState(0);
-
   return (
-    <SafeAreaView style={styles.container}>
-      
-      <View>
-        <TouchableOpacity onPress={ () => props.navigation.navigate('DiceScreen', {dice4: 4})   } > 
-          <Text style={styles.font}> Dice 4 </Text> 
-        </TouchableOpacity> 
-      </View>
+      <NavigationContainer>
 
-      <View>
-        <TouchableOpacity> 
-          <Text style={styles.font}> Dice 6 </Text> 
-        </TouchableOpacity> 
-      </View>
+        <HomeScreenStack />
 
-      <View>
-        <TouchableOpacity> 
-          <Text style={styles.font}> Dice 8 </Text> 
-        </TouchableOpacity> 
-      </View>
-
-
-      <View>
-        <TouchableOpacity> 
-          <Text style={styles.font}> Dice 10 </Text> 
-        </TouchableOpacity> 
-      </View>
-
-      <View>
-        <TouchableOpacity> 
-          <Text style={styles.font}> Dice 20 </Text> 
-        </TouchableOpacity> 
-      </View>
-
-      <View>
-        <TouchableOpacity> 
-          <Text style={styles.font}> Dice 100 </Text> 
-        </TouchableOpacity> 
-      </View>
-
-      
-    </SafeAreaView>
+      </NavigationContainer>
   );
 }
 
