@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView,  } from 'react-native';
 
-
+import DiceSelect from './DiceSelect';
 
 const DiceScreen = props => {
 
@@ -12,7 +12,7 @@ const [diceSelect, setDiceSelect] = useState(0);
     <SafeAreaView style={styles.container}>
       
       <View>
-        <TouchableOpacity onPress={ () => props.navigation.navigate('DiceSelect', {dice4: 4})   } > 
+        <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice4: 4})   } > 
           <Text style={styles.font}> Dice 4 </Text> 
         </TouchableOpacity> 
       </View>
@@ -64,6 +64,13 @@ const styles = StyleSheet.create({
   font:{
     fontSize: 40,
     fontWeight: 'bold',
+  },
+
+  touchable:{
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 5,
+    
   },
 
 });

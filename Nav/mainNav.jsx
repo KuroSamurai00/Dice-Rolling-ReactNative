@@ -13,8 +13,11 @@ function HomeScreenStack(){
 
         <Stack.Navigator>
 
+           
             <Stack.Screen name='DiceScreen' component = {DiceScreen} />
+
             <Stack.Screen name='DiceSelect' component = {DiceSelect} />
+          
 
         </Stack.Navigator>
 
