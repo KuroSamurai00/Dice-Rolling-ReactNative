@@ -36,8 +36,7 @@ const DiceSelect = props => {
                 <View>
                     <TouchableOpacity style={styles.touchable}
                     onPress={ () => {
-                        setRandomGenerate(randomize());
-                        console.log("boobies");
+                        
                         setRandomGenerate(randomize());
     
                         console.log(randomGenerate);
@@ -64,6 +63,12 @@ const DiceSelect = props => {
                 <ScrollView>
 
                     <Text> asfafafv</Text>
+
+                </ScrollView>
+
+                <ScrollView>
+
+                    <Text> {diceRollList} </Text>
 
                 </ScrollView>
 
