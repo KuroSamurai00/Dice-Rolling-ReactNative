@@ -6,44 +6,45 @@ import DiceSelect from './DiceSelect';
 
 const DiceScreen = props => {
 
-const [diceSelect, setDiceSelect] = useState(0);
+  
 
   return (
     <SafeAreaView style={styles.container}>
       
-      <View>
-        <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice4: 4})   } > 
+      <View style={styles.button}>
+         <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 4})   } >  
           <Text style={styles.font}> Dice 4 </Text> 
         </TouchableOpacity> 
       </View>
 
-      <View>
-        <TouchableOpacity> 
+
+      <View style={styles.button}>
+         <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 6})   } >  
           <Text style={styles.font}> Dice 6 </Text> 
         </TouchableOpacity> 
       </View>
 
-      <View>
-        <TouchableOpacity> 
+      <View style={styles.button}>
+      <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 8})   } >
           <Text style={styles.font}> Dice 8 </Text> 
         </TouchableOpacity> 
       </View>
 
 
-      <View>
-        <TouchableOpacity> 
+      <View style={styles.button}>
+      <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 10})   } > 
           <Text style={styles.font}> Dice 10 </Text> 
         </TouchableOpacity> 
       </View>
 
-      <View>
-        <TouchableOpacity> 
+      <View style={styles.button}>
+      <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 20})   } >
           <Text style={styles.font}> Dice 20 </Text> 
         </TouchableOpacity> 
       </View>
 
-      <View>
-        <TouchableOpacity> 
+      <View style={styles.button}>
+      <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 100})   } >
           <Text style={styles.font}> Dice 100 </Text> 
         </TouchableOpacity> 
       </View>
@@ -71,6 +72,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 5,
     
+  },
+
+  button:{
+    paddingBottom: 15,
   },
 
 });
