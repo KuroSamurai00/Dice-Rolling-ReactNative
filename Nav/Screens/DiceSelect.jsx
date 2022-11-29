@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, Touchable, SafeAreaView} from 'react-native'
+import {View, Text, StyleSheet, Touchable, SafeAreaView, FlatList} from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 //import DiceList from './components/DiceList';
@@ -10,16 +10,22 @@ const DiceSelect = props => {
     const [diceroll, setDiceRoll] = useState();
     const [diceList, setDiceList] = useState([]);
 
-
-    useEffect
-
     const randomRoll = () =>{
 
         setDiceRoll(Math.floor(Math.random() * (props.route.params.dice)) + 1);
 
         // setDiceList([...diceroll, diceroll]);
 
-        
+    };
+
+    const addList = () =>{
+
+        const newArray = [...diceList, diceroll]
+
+        setDiceList(newArray)
+
+        // setDiceList([...diceroll, diceroll]);
+
     };
 
     return(
@@ -29,11 +35,7 @@ const DiceSelect = props => {
             <View style={styles.rollingdice}>
 
             <View>
-                <Text> Dice: {props.route.params.dice}  </Text>
-            </View>
-
-            <View>
-                <Text> this is where dice would roll</Text>
+                <Text style={styles.text}> Dice: {props.route.params.dice}  </Text>
             </View>
 
             <View>
@@ -41,7 +43,7 @@ const DiceSelect = props => {
             </View>
 
             <View>
-                <Text>
+                <Text style={styles.text}>
                     {diceroll}
                 </Text>
             </View>
@@ -56,7 +58,10 @@ const DiceSelect = props => {
             
             <View style={styles.flatList}>
                 <Text> DICE ROLL HISTORY</Text>
-                <ScrollView>
+        
+
+
+                    
                     {/* <View>
                         <Text>{diceList[0]}</Text>
                     </View> */}
@@ -70,10 +75,6 @@ const DiceSelect = props => {
 
 
                     )} */}
-                </ScrollView>
-
-
-
 
             </View>
 
@@ -114,9 +115,15 @@ const DiceSelect = props => {
         touchable:{
           backgroundColor: 'white',
           borderRadius: 10,
-          padding: 5,
+          padding: 20,
+          fontSize: 40,
           
         },
+
+        text:{
+            fontSize: 90,
+            
+          }
       
       });
 
