@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, FlatList } from 'react-native'
 
 
-//import DiceList from './components/DiceList';
-
-
 const DiceSelect = props => {
 
     const [diceroll, setDiceRoll] = useState("-");
@@ -33,23 +30,19 @@ const DiceSelect = props => {
             </View>
 
             <View style={styles.rollingdice}>
-                        <Text style={styles.textroll}>
-                            {diceroll}
-                        </Text>
+                <Text style={styles.textroll}>
+                    {diceroll}
+                </Text>
             </View>
 
             <View style={styles.buttonbar}>
-                    
-                        <TouchableOpacity style={styles.touchable} onPress={() => { randomRoll(); }}  >
-                            <Text style={styles.text}> Roll Dice </Text>
-                        </TouchableOpacity>
-                    
-  
+
+                <TouchableOpacity style={styles.touchable} onPress={() => { randomRoll(); }}  >
+                    <Text style={styles.text}> Roll Dice </Text>
+                </TouchableOpacity>
+
+
             </View>
-
-            
-
-
 
         </SafeAreaView>
 
