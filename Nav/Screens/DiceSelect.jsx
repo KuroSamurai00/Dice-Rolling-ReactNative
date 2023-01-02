@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, Touchable, SafeAreaView, FlatList} from 'react-native'
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, FlatList } from 'react-native'
+
 
 //import DiceList from './components/DiceList';
 
 
 const DiceSelect = props => {
 
-    const [diceroll, setDiceRoll] = useState();
+    const [diceroll, setDiceRoll] = useState("-");
     const [diceList, setDiceList] = useState([]);
 
-    const randomRoll = () =>{
+    const randomRoll = () => {
 
         setDiceRoll(Math.floor(Math.random() * (props.route.params.dice)) + 1);
 
@@ -18,114 +18,99 @@ const DiceSelect = props => {
 
     };
 
-    const addList = () =>{
 
-        const newArray = [...diceList, diceroll]
 
-        setDiceList(newArray)
-
-        // setDiceList([...diceroll, diceroll]);
-
-    };
-
-    return(
+    return (
 
         <SafeAreaView style={styles.SafeAreaView}>
 
+            <View style={styles.dicebar}>
+
+                <View>
+                    <Text style={styles.text}> Dice: {props.route.params.dice} </Text>
+                </View>
+
+            </View>
+
             <View style={styles.rollingdice}>
-
-            <View>
-                <Text style={styles.text}> Dice: {props.route.params.dice}  </Text>
+                        <Text style={styles.textroll}>
+                            {diceroll}
+                        </Text>
             </View>
 
-            <View>
-                <TouchableOpacity style={styles.touchable} onPress={ () => {randomRoll();}}  > Roll Dice </TouchableOpacity>
-            </View>
-
-            <View>
-                <Text style={styles.text}>
-                    {diceroll}
-                </Text>
-            </View>
-
-
-
-
-
-
-
-            </View>
-            
-            <View style={styles.flatList}>
-                <Text> DICE ROLL HISTORY</Text>
-        
-
-
+            <View style={styles.buttonbar}>
                     
-                    {/* <View>
-                        <Text>{diceList[0]}</Text>
-                    </View> */}
-                   {/* {diceList.map(
-                        (item) => (
-                            <View>  {diceList.item}   </View>
-
-
-
-                        )
-
-
-                    )} */}
-
+                        <TouchableOpacity style={styles.touchable} onPress={() => { randomRoll(); }}  >
+                            <Text style={styles.text}> Roll Dice </Text>
+                        </TouchableOpacity>
+                    
+  
             </View>
 
             
+
 
 
         </SafeAreaView>
 
 
     );
-        
-    }
-    const styles = StyleSheet.create({
-        SafeAreaView: {
-            flex: 1,
-            backgroundColor: '#00c0ff',
-            
-        },
 
-        rollingdice: {
-            flex: 1,
-            justifyContent:'center',
-            alignItems:'center',
-            
-            
-        },
-        flatList: {
-            flex: 1,
-            backgroundColor: '#55aedf',
-            
-        },
-      
-        font:{
-          fontSize: 40,
-          fontWeight: 'bold',
-        },
-      
-        touchable:{
-          backgroundColor: 'white',
-          borderRadius: 10,
-          padding: 20,
-          fontSize: 40,
-          
-        },
+}
+const styles = StyleSheet.create({
+    SafeAreaView: {
+        flex: 1,
+        backgroundColor: '#00c0ff',
 
-        text:{
-            fontSize: 90,
-            
-          }
-      
-      });
+    },
+
+    dicebar: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    rollingdice: {
+        flex: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    buttonbar: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+
+    flatList: {
+        flex: 1,
+        backgroundColor: '#55aedf',
+
+    },
+
+    font: {
+        fontSize: 40,
+        fontWeight: 'bold',
+    },
+
+    touchable: {
+        backgroundColor: 'white',
+        borderRadius: 10,
+        padding: 20,
+        fontSize: 40,
+
+    },
+
+    text: {
+        fontSize: 30,
+    },
+
+    textroll: {
+        fontSize: 170,
+    },
+
+});
 
 
 export default DiceSelect;

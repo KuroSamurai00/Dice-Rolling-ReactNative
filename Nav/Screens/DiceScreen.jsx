@@ -11,38 +11,38 @@ const [diceSelect, setDiceSelect] = useState(0);
   return (
     <SafeAreaView style={styles.container}>
       
-      <View>
+      <View style={styles.buttonpadding}>
         <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 4})   } > 
           <Text style={styles.font}> Dice 4 </Text> 
         </TouchableOpacity> 
       </View>
 
-      <View>
+      <View style={styles.buttonpadding}>
       <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 6})   } > 
           <Text style={styles.font}> Dice 6 </Text> 
         </TouchableOpacity> 
       </View>
 
-      <View>
+      <View style={styles.buttonpadding}>
       <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 8})   } > 
           <Text style={styles.font}> Dice 8 </Text> 
         </TouchableOpacity> 
       </View>
 
 
-      <View>
+      <View style={styles.buttonpadding}>
       <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 10})   } > 
           <Text style={styles.font}> Dice 10 </Text> 
         </TouchableOpacity>  
       </View>
 
-      <View>
+      <View style={styles.buttonpadding}>
       <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 20})   } > 
           <Text style={styles.font}> Dice 20 </Text> 
         </TouchableOpacity>  
       </View>
 
-      <View>
+      <View style={styles.buttonpadding}>
       <TouchableOpacity style={styles.touchable}onPress={ () => props.navigation.navigate('DiceSelect', {dice: 100})   } > 
           <Text style={styles.font}> Dice 100 </Text> 
         </TouchableOpacity>  
@@ -69,9 +69,14 @@ const styles = StyleSheet.create({
   touchable:{
     backgroundColor: 'white',
     borderRadius: 10,
-    padding: 5,
+    padding:0 ,
     
   },
+
+  buttonpadding:{
+    padding: 15,
+  },
+   
 
 });
 export default DiceScreen;
