@@ -1,11 +1,11 @@
 # Dice-Rolling-ReactNative
-Simple Dice Rolling App in React Native
+Simple Dice Rolling App in React Native. 
 
-GitHub Practice and React Native Practice
+Dice Rolling - a Simple DnD Dice rolling app that generates different dice rolls and provides the user with a random generated number within the range. .
 
-Dice Rolling - a Simple DnD Dice rolling app that generates different dice rolls.
+Ex: Dice 10 is selected, a random number between 1-10 will display. 
 
-***** IN PROGRESS *****
+***** Currently updating UI/UX *****
 
 
 ![Screenshot_20221230-120359_Expo Go_samsung-galaxys20-cosmicgrey-portrai111122t](https://user-images.githubusercontent.com/78323898/210204610-7b68be39-c687-4d9e-bfe7-fd0a937bdd62.png)
